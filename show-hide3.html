@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.fadein { position:relative; height:332px; width:500px; }
+.fadein div {position:absolute;text-align:center;height:100%;}
+.fadein p { position:absolute; bottom:0;width:100%;color:white;background-color:rgba(0,0,0,0.6);height:1em;padding-bottom:10px;}</style>
+</head>
+<body>
+<div id="wrapper">
+	<h1>Fade In Fade Out Effect with Autoscroll</h1>
+	<h2>Reference1: http://jsfiddle.net/S4SmM/5/  </h2>
+	<h2>Reference2: http://stackoverflow.com/questions/14003964/simple-jquery-slideshow-with-fadein-fadeout</h2>
+	<div class="fadein">
+		<div><img src="images/4148988872_990b6da667.jpg"><p>image1</p></div>
+		<div><img src="images/4121218611_040cd7b3f2.jpg"><p>image2</p></div>
+		<div><img src="images/4121218751_ac8bf49d5d.jpg"><p>image3</p></div>
+	</div>
+
+</div>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+ <script> 
+		$.fn.nextOrFirst = function(selector) {
+			var next = this.next(selector);
+			return (next.length) ? next : this.prevAll(selector).last();
+		}
+
+		$(function() {
+			$('.fadein div:eq(0)').addClass("active");
+			$('.fadein div:gt(0)').hide();
+			setInterval(function() {
+				$('.active:eq(0)').fadeOut().removeClass("active").nextOrFirst('div').addClass("active").fadeIn().end()
+			}, 3000);
+		});
+ </script>
+</body>
+</html>

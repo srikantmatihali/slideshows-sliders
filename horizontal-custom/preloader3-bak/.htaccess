@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
+RewriteCond $1 !^(scripts|styles|images|data|js|css|tees)
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?view=$1 [QSA]

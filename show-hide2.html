@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body{
+	margin: 0 auto;
+}
+#wrapper{
+	overflow:hidden;
+}
+.sliders{
+	float:left;
+}
+ .sliders li{
+	float:left;
+	list-style:none !important;
+	display:none;
+ }
+ .sliders .sactive{
+	//display:block;
+	z-index:10;
+  }
+  
+  .pagination{
+	float:left;
+	list-style:none;
+ }
+  .pagination li{
+	float:left;
+	padding:0 10px;	
+  }
+  
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<h1>Fade In Fade Out Effect with Autoscroll</h1>
+	<div style="clear:both;"></div>
+	<div id="ul2">
+	 <ul id="slideul2" class="sliders">
+		<li style="display:block">
+		 <div>
+			 check1
+		 </div>
+		</li>
+		<li>
+		<div>
+			 check2
+		 </div>
+		</li>
+		<li>
+		<div>
+			check3
+		 </div>
+		</li>
+		<li>
+		<div>
+			check4
+		 </div>
+		</li>
+		<li>
+		<div>
+			check5
+		 </div>
+		</li>
+		<li >
+		<div>
+			 check6
+		 </div>
+		</li>		
+	</ul>
+	
+	<p style="clear:both;"></p>
+	<ul class="pagination">
+		<li ><a  id="slide2-prev" >previous</a></li>
+		<li ><a  id="slide2-next" >next</a></li>
+	</ul>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script type="text/javascript" src="js/showhide2.js" ></script>
+ <script>
+  $(document).ready(function(){ //alert(1);
+  
+	$("#slideul2").customslide({
+			next: 'slide2-next',
+			prev: 'slide2-prev',
+			autoscroll: true,
+			hidetime : 4000
+			});
+	});
+ </script>
+</body>
+</html>

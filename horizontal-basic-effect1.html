@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+
+#wrapper{
+width: 740px;
+overflow:hidden;
+}
+ #slideul{
+	float:left;
+	width:3870px;
+	position:relative;
+	padding-left: 20px;
+ }
+ #slideul li{
+	list-style:none !important;
+	float:left;
+	width:660px;
+	height:387px;
+	//display:none;
+ }
+ #pagination{
+	float:left;
+	list-style:none;
+ }
+  #pagination li{
+	float:left;
+	padding:0 10px;
+  }
+  #slideul li{
+	opacity:0.2;
+  }
+  #slideul li:first-child,.hs2{
+	opacity:1;
+  }
+  
+  .hs2{
+	opacity:1 !important;
+  }
+  .hs{ opacity:0.2 !important;}
+</style>
+</head>
+<body>
+`	
+	<ul id="slideul">
+		<li id="li1" style="display:block;" >
+		 <div>
+			 <img src="images/1.jpg" width="660" height="387" alt = "image1" />
+		 </div>
+		</li>
+		<li id="li2" >
+		<div>
+			 <img src="images/2.jpg" width="660" height="387" alt = "image2" />
+		 </div>
+		</li>
+		<li id="li3" >
+		<div>
+			 <img src="images/durand.jpg" width="660" height="387" alt = "image3" />
+		 </div>
+		</li>
+		<li id="li4" >
+		<div>
+			 <img src="images/fed.jpg" width="660" height="387" alt = "image4" />
+		 </div>
+		</li>
+		<li id="li5" >
+		<div>
+			 <img src="images/fed.jpg" width="660" height="387" alt = "image5" />
+		 </div>
+		</li>
+		<li id="li6" >
+		<div>
+			 <img src="images/fed.jpg" width="660" height="387" alt = "image6" />
+		 </div>
+		</li>		
+	</ul>
+	
+	<p style="clear:both;"></p>
+	<ul id="pagination">
+		<li id="previous"><a>previous</a></li>
+		<li id="next"><a>next</a></li>
+	</ul>
+	
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+<script type="text/javascript">
+ var clicked = false;
+ var ul_width = 0;
+ var current = 1;
+ $("#slideul li").each(function () {
+         ul_width = ul_width + $(this).width() + 42;
+  });
+ $("#slideul").css('width', ul_width + "px");
+ $("#next").live("click", function(e){
+	if(!clicked){
+		clicked = true;
+		e.preventDefault();
+		 if ($("#slideul li").length > current) {
+			 wid = $("#slideul li:nth-child(" + current + ")").width();
+             lf = $("#slideul").offset().left - wid; console.log("LF : "+lf);
+			 current = current + 1; 
+			 hide(current);
+		 }
+		//lf = '+=50'; console.log(lf);
+		 $("#slideul").animate({ left: lf }, 500, function () {
+            clicked = false;
+         });
+	} checkButton();
+	return false;
+ });
+ 
+ $("#previous").live("click", function(e){
+	if(!clicked){
+		clicked = true;
+		e.preventDefault();
+		 if (current != 1) {
+			 wid = $("#slideul li:nth-child(" + current + ")").width();
+             lf = $("#slideul").offset().left + wid; console.log("LF : "+lf);
+			 current = current - 1; 
+			 hide(current);
+		 }		//lf = '+=50';		 console.log(lf);
+		 $("#slideul").animate({ left: lf }, 500, function () {
+            clicked = false;
+         });		
+	} checkButton();
+	return false;
+ });
+ 
+ function hide(page) {
+                var len = $("#slideul li").size();
+                $("#slideul li").addClass("hs").removeClass("hs2");
+                $("#li" + page).removeClass("hs").addClass("hs2");
+ }
+ function checkButton() {
+                $("#prev").css('display', 'block');
+                $("#next").css('display', 'block');
+                if (current == 1) {
+                    $("#prev_slide").css('display', 'none');
+                }
+                if (current == $("#slideul li").length) {
+                    $("#next_slide").css('display', 'none');
+                }
+}
+
+</script>
+</body>
+</html>
+

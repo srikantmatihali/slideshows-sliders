@@ -1,0 +1,124 @@
+
+.banner .jcarousel-clip-horizontal {
+    width:  1950px;
+    height: 431px;
+	position:absolute;
+	left:50%;
+	margin-left:-975px;
+}
+
+.video_slider .jcarousel-clip-horizontal {
+    width:  894px;
+	overflow:hidden;
+	position:relative;
+	height:152px;
+	margin:0 auto;
+}
+#faqs-slider .jcarousel-clip-horizontal {
+    width:  510px;
+	overflow:hidden;
+	position:relative;
+	height:145px;
+	margin:0 auto;
+}
+.jcarousel-item {
+    width: 650px;
+    height: 431px;
+}
+.video_slider .jcarousel-item {
+    width: 213px;
+    margin: 0 5px 0 0;
+    padding: 3px;
+}
+#faqs-slider .jcarousel-item {
+    width: 510px;
+    margin: 0 5px 0 0;
+    padding: 3px;
+	height:145px;
+	position:relative !important;
+}
+.jcarousel-next-horizontal,.jcarousel-prev-horizontal{
+    position:absolute;
+	top:50%;
+	background-repeat:no-repeat;
+	height:97px;
+	width:22px;
+	margin-top:-48px;
+	outline:none;
+	z-index:100000;
+	text-indent:-200000px;
+	cursor:pointer;
+}
+
+.jcarousel-next-horizontal:hover,
+.jcarousel-next-horizontal:focus {
+    right:-2px;
+	background-image:url(../images/top-slider-arrow-right-hover.png);
+}
+
+.jcarousel-next-horizontal{
+	right:-2px;
+	background-image:url(../images/top-slider-arrow-right.png);
+}
+.jcarousel-prev-horizontal{
+	left:0px;			
+	background-image:url(../images/top-slider-arrow-left.png);
+}
+
+.jcarousel-prev-horizontal:hover, 
+.jcarousel-prev-horizontal:focus {
+    left:0px;			
+	background-image:url(../images/top-slider-arrow-left-hover.png);
+}
+.video_slider .jcarousel-next-horizontal,.video_slider .jcarousel-prev-horizontal{
+	margin-top:-32px !important;
+}
+.video_slider .jcarousel-next-horizontal:hover,
+.video_slider .jcarousel-next-horizontal:focus {
+    right:-2px;
+	background-image:url(../images/only_arrow_red_right_big.png);
+}
+
+.video_slider .jcarousel-next-horizontal{
+	right:-2px;
+	background-image:url(../images/only_arrow_red_right_big.png);
+}
+.video_slider .jcarousel-prev-horizontal{
+	left:0px;			
+	background-image:url(../images/only_arrow_red_left_big.png);
+}
+
+.video_slider .jcarousel-prev-horizontal:hover, 
+.video_slider .jcarousel-prev-horizontal:focus {
+    left:0px;			
+	background-image:url(../images/only_arrow_red_left_big.png);
+}
+
+
+#faqs-slider .jcarousel-next-horizontal,#faqs-slider .jcarousel-prev-horizontal{
+    position:absolute;
+	top:108px;
+	background-repeat:no-repeat;
+	height:17px;
+	width:48px;
+	margin-top:5px;
+	outline:none;
+	z-index:1000;
+	text-indent:-200000px;
+	cursor:pointer;
+}
+
+#faqs-slider .jcarousel-next-horizontal{
+	right:0px;
+	background-image:url(../images/faq-next.png);
+}
+#faqs-slider .jcarousel-prev-horizontal{
+	left:33px;			
+	background-image:url(../images/faq-prev.png);
+}
+.faqs-slider .faqs-answer{
+	display:block !important;	
+}
+
+
+

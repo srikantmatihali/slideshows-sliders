@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="css/carousel.css" />
+<style>
+.caroufredsel_wrapper{
+	left:50% !important;
+	margin-left:-975px !important;
+	width:1950px !important
+}
+.banner{
+	overflow:hidden;
+	height:431px;	
+	z-index:1000;
+}
+.list_carousel {
+	height:431px;
+}
+.list_carousel ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	
+}
+
+.list_carousel li {
+	font-size: 40px;
+	color: #999;
+	text-align: center;
+	padding: 0;
+	margin: 0px;
+	display: block;
+	float: left;
+}
+.topSlider li{
+	cursor:default;
+	position:relative;	
+}
+
+.topSliderLink{
+	background-image:url(images/btn_white_left.png);
+	background-repeat:no-repeat;
+	height:24px;
+	padding-left:10px;
+	position:absolute;
+	bottom:50px;
+	left:20px;
+	z-index:1;
+	font-size:12px;
+	float:left;
+	display:block;
+}
+.topSliderLink div{
+	background-image:url(images/btn_white_right.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	height:24px;
+	text-transform:uppercase;
+	padding:6px 18px 6px 0;
+	float:left;
+}
+.topSliderLink div a{
+	margin-right:15px;
+	display:block;
+	font-weight:bold;
+	color:#000;
+}
+.jcarousel-next-horizontal {
+right: -2px;
+background-image: url(images/top-slider-arrow-right.png);
+}
+
+.jcarousel-prev-horizontal {
+	left: 0px;
+	background-image: url(images/top-slider-arrow-left.png);
+}
+.transLayerLeft,.transLayerRight{
+	height:431px;
+	background-image:url(images/banner-trans-layer.png);
+	position:absolute;
+	z-index:10;	
+}
+*:first-child+html .transLayerLeft{
+	display:none;
+}
+*:first-child+html .transLayerRight{
+	display:none;
+}
+.transLayerLeft{
+	left:0;	
+}
+.transLayerRight{
+	right:0;	
+}
+</style>
+</head>
+<body>
+<div class="list_carousel" style="margin: 0; width: auto; overflow:hidden">
+    <div class="banner">  
+		<div class="transLayerLeft height431"  ></div>
+		<div class="transLayerRight height431"  ></div>
+		 <ul id="mycarousel" class="jcarousel-skin-tango topSlider">
+			<li>
+							<img src="images/data/exclusive/test1.jpg">
+							<div class="topSliderLink"><div><a href="">Read More</a></div></div>
+			</li>
+			<li>
+							<img src="images/data/exclusive/test1.jpg">
+							<div class="topSliderLink"><div><a href="">Read More</a></div></div>
+			</li>
+			<li>
+							<img src="images/data/exclusive/test1.jpg">
+							<div class="topSliderLink"><div><a href="">Read More</a></div></div>
+			</li>
+			<li>
+							<img src="images/data/exclusive/test1.jpg">
+							<div class="topSliderLink"><div><a href="">Read More</a></div></div>
+			</li>
+			<li>
+							<img src="images/data/exclusive/test1.jpg">
+							<div class="topSliderLink"><div><a href="">Read More</a></div></div>
+			</li>
+		</ul>	
+		                 
+	</div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script>
+$(document).ready(function() {
+	
+		// Top ad slider
+    showWidth("document", $(document).width());
+    
+    var liSize = $(".topSlider li").size();
+    var topSlider = liSize*650;
+    var topSliderHalf = topSlider/2;
+    
+    function showWidth(ele, w) {
+
+         var bannerHalfWidth = w/2;	
+         var minusCenterSlide = w-650;
+         var transWidth = minusCenterSlide/2;
+         $('.banner').css({"width":w+-1+"px"}).css({cursor:"auto","position":"absolute","left":"50%","margin-left":"-"+bannerHalfWidth+"px"});
+         $('.transLayerLeft,.transLayerRight').css({"width":+transWidth+"px"});
+		//  $('.bannerLeft').css({"left":"0","position":"absolute","top":"50%"});
+		//$('.bannerRight').css({"right":"-2px","position":"absolute","top":"50%"});
+        }
+	
+	$('#mycarousel').jcarousel({
+    	wrap: 'circular',
+		scroll:1
+    });
+
+
+	$('.topSliderClick').click(function(){
+			if ($(".banner,.topSliderPlaceholder").is(":hidden")){
+			$(".topSliderPlaceholder,.banner").animate({height:"431px"},{duration:300,easing:"easeInQuad"});
+			$('.banner,.topSliderPlaceholder').show(500);
+			$('.topSliderClick .sliderClickUp').toggleClass("sliderClickDown", "sliderClickUp");
+			}else{
+				$(".topSliderPlaceholder,.banner").animate({height:"0px"},{duration:500,easing:"easeOutCirc"});
+				$('.banner,.topSliderPlaceholder').hide(300);
+				$('.topSliderClick .sliderClickUp').toggleClass("sliderClickDown", "sliderClickUp");
+			}
+	});
+});
+</script>
+</body>
+</html>
+

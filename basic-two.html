@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+*{
+margin:0;
+padding:0;
+}
+
+.hide{
+	opacity:0;
+}
+  
+.wrapper{
+	overflow:hidden;
+}
+ .slideul{
+	float:left;
+	position:relative;		
+ }
+ .slideul li{
+	list-style:none !important;
+	float:left;	
+	visibility:visible;
+ }
+ .pagination{
+	float:left;
+	list-style:none;
+ }
+  .pagination li{
+	float:left;
+	padding:0 10px;	
+  }  
+</style>
+</head>
+<body>
+
+<div>
+	<div>
+			<ul id="slideul" class="sliders slideul">
+				<li class="sactive">
+					 <div>
+						 <img src="images/1.jpg" alt="1" />
+					 </div>
+				</li>
+				
+				<li>
+					<div>
+						 <img src="images/2.jpg" alt="2" />
+					 </div>
+				</li>
+				
+				<li>
+					<div>
+						<img src="images/3.jpg" alt="3" />
+					 </div>
+				</li>
+				<li>
+					<div>
+						<img src="images/4.jpg" alt="4" />
+					 </div>
+				</li>
+				<li>
+					<div>
+						<img src="images/5.jpg" alt="5" />
+					 </div>
+				</li>						
+			</ul>
+	</div>	
+</div>
+
+<div style="clear:both;"></div>
+	<ul class="pagination">
+		<li ><a class="slide2-prev slide1-prev"  id="slide2-prev" >previous</a></li>
+		<li ><a class="slide2-next slide1-next" id="slide2-next" >next</a></li>
+	</ul>
+<div style="clear:both;"></div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js" ></script>
+<script type="text/javascript" src="js/horizontal-slider.js" ></script>
+<script>
+  $(document).ready(function(){ //alert(1);		
+		$(".slideul").customslide
+		({
+			next: 'slide1-next',
+			prev: 'slide1-prev',
+			animationSpeed: 500,
+			broHeight : 130,
+			broWidth : 92,
+			defaultli : 1,
+			displayno : 2,
+			lastcount:5
+		});
+  });
+ </script>
+</body>
+</html>
