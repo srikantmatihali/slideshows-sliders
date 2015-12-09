@@ -252,8 +252,7 @@ $(document).ready(function(){ //alert(1);
 			defaultli : 1,
 			displayview: view,
 			displayno : 3,
-			lastcount:liCount,
-			siteurl : 'http://localhost/p/slider/horizontal-custom/'
+			lastcount:liCount//,siteurl : 'http://localhost/p/slider/horizontal-custom/'
 	});
 });
  </script>
